@@ -31,6 +31,6 @@ http://jamesknelson.com/learn-raw-react-no-jsx-flux-es6-webpack/
 Шуточная статья о том, как один чувак создавал свою библиотеку компонентов. По ней хорошо изучить принцип композиции, который используется при работе с реактом
 https://hackernoon.com/how-i-converted-my-react-app-to-vanillajs-and-whether-or-not-it-was-a-terrible-idea-4b14b1b2faff
 
-[Домашнее задание](/task1)
+[Домашнее задание](/task-01)
 
 ---
