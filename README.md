@@ -16,9 +16,6 @@ https://abraxabra.ru/react.js/bystryy-start/vnedrenie-jsx/
 Отрисовка элементов
 https://abraxabra.ru/react.js/bystryy-start/react-js-otrisovka-elementov/
 
-Состояние и жизненный цикл
-https://abraxabra.ru/react.js/bystryy-start/react-js-sostoyanie-i-zhiznennyy-tsikl/
-
 Компоненты и свойства
 https://abraxabra.ru/react.js/bystryy-start/react-js-komponenty-i-svoystva/
 
