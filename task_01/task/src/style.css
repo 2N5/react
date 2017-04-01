@@ -1,0 +1,16 @@
+.Content {
+	text-align: center;
+}
+ul {
+	list-style-type: none;
+	padding: 0;
+}
+li {
+	display: inline-block;
+}
+img {
+	width: 200px;
+}
+figcaption {
+	margin: 10px 0;
+}

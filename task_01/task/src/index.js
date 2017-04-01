@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import UserComand from './UserComand';
+import './index.css';
 
 ReactDOM.render(
-  <App />,
+  <UserComand />,
   document.getElementById('root')
 );

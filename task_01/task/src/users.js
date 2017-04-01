@@ -1,5 +1,4 @@
-const users = [
-    {
+const users = [{
         "login": "mojombo",
         "id": 1,
         "avatar_url": "https://avatars3.githubusercontent.com/u/1?v=3",
