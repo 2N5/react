@@ -1,11 +1,22 @@
 import React, { Component } from 'react';
 import AddSkill from './AddSkill';
+import Colors from './Colors/Colors';
 
 
 class User extends Component {
     state = {
-        skills: this.props.skills
+        skills: this.props.skills,
+        favoriteColor: '',
+        jokes: []
     };
+
+    componentDidMount() {
+        fetch('http://api.icndb.com/jokes/random/3')
+            .then(data => data.json())
+            .then(json => {
+                this.setState({jokes: json.value})
+            });
+    }
 
     addSkill = (skill) => {
         this.setState({
@@ -13,9 +24,14 @@ class User extends Component {
         });
     };
 
+    handleSelectColor = (favoriteColor) => {
+        this.setState({favoriteColor});
+    };
+
     render() {
+        const {favoriteColor} = this.state;
         return (
-            <div>
+            <div style={{background: favoriteColor}}>
                 <h3>{this.props.name}</h3>
                 <h5>{this.props.title}</h5>
                 <ul>
@@ -27,6 +43,12 @@ class User extends Component {
                         );
                     })}
                 </ul>
+                <p>Favorite color: {favoriteColor}</p>
+                <div>
+                    Favorite jokes:
+                    {}
+                </div>
+                <Colors onSelectColor={this.handleSelectColor}/>
                 <AddSkill onAddSkillClick={this.addSkill}/>
             </div>
             
