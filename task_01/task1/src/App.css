@@ -1,11 +1,11 @@
 .search-users {
+  margin-top: 10px;
+  display: inline;
   width: 300px;
-  margin: 0 auto;
 }
 
 .search-field {
-  margin-top: 20px;
-  width: 100%;
+  width: 25%;
   padding: 5px;
   font-size: 16px;
 }
@@ -13,16 +13,18 @@
 .user-list {
   padding: 0;
   width: 100%;
+  margin-top: 40px;
 }
 
 figure {
   margin: 0 auto;
-  display: flex;
+  display: inline-block;
   align-items: center;
   font-family: sans-serif;
-  width: 100%;
+  width: 20%;
   padding: 5px;
-  border-bottom: 1px dotted grey;
+  border-bottom: 1px solid grey;
+  border-right: 2px solid lightgray;
 }
 
 img {
@@ -33,7 +35,7 @@ img {
 }
 
 figcaption {
-  font-size: 20px;
+  font-size: 15px;
   font-weight: bold;
 }
 

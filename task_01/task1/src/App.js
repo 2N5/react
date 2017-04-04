@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import UserCard from './UserCard';
-import USERS from './users';
+import GithubUsers from './GithubUsers';
 import './App.css';
 
 class App extends Component {
     constructor (props) {
         super (props);
         this.state = {
-            displayedUsers: USERS
+            displayedUsers: []
         };
 
         //раскомментировать, если использовать объявление
@@ -17,18 +16,18 @@ class App extends Component {
         //this.handleSearch = this.handleSearch.bind(this)
     }
 
-    handleSearch = (event) => {
-        let searchQuery = event.target.value.toLowerCase();
-        let displayedUsers = USERS.filter(function(user) {
-            let searchValue = user.name.toLowerCase();
-            return searchValue.indexOf(searchQuery) !== -1;
-        });
-        //this ссылается на класс, т.к. стрелочные функции
-        //не имеют собственного контекста this!
-        this.setState({
-            displayedUsers: displayedUsers
-        });
-    }
+    // handleSearch = (event) => {
+    //     let searchQuery = event.target.value.toLowerCase();
+    //     let displayedUsers = USERS.filter(function(user) {
+    //         let searchValue = user.name.toLowerCase();
+    //         return searchValue.indexOf(searchQuery) !== -1;
+    //     });
+    //     //this ссылается на класс, т.к. стрелочные функции
+    //     //не имеют собственного контекста this!
+    //     this.setState({
+    //         displayedUsers: displayedUsers
+    //     });
+    // }
 
     render () {
         return (
@@ -38,20 +37,7 @@ class App extends Component {
                        onChange={this.handleSearch}
                        placeholder='search...'
                 />
-                <div className='user-list'>
-                    {
-                        this.state.displayedUsers.map(function (user) {
-                            return <UserCard
-                                key={user.id}
-                                src={user.avatar_url}
-                                href={user.html_url}
-                                login={user.login}
-                                name={user.name}
-                                altImg={user.name + ' avatar'}
-                            />;
-                        })
-                    }
-                </div>
+                <GithubUsers />
             </div>
         );
     }
