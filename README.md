@@ -1,3 +1,8 @@
+History_API
+https://developer.mozilla.org/ru/docs/Web/API/History_API
+
+---
+
 Состояние и жизненные цикл
 https://abraxabra.ru/react.js/bystryy-start/react-js-sostoyanie-i-zhiznennyy-tsikl/
 
