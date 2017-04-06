@@ -10,6 +10,11 @@ class User extends Component {
         jokes: []
     };
 
+    componentWillUpdate() {
+        console.log('update');
+        
+    }
+
     componentDidMount() {
         fetch('http://api.icndb.com/jokes/random/3')
             .then(data => data.json())
@@ -29,7 +34,12 @@ class User extends Component {
     };
 
     render() {
-        const {favoriteColor} = this.state;
+        console.log('render');
+        
+        const {
+            favoriteColor,
+            jokes
+        } = this.state;
         return (
             <div style={{background: favoriteColor}}>
                 <h3>{this.props.name}</h3>
@@ -46,10 +56,17 @@ class User extends Component {
                 <p>Favorite color: {favoriteColor}</p>
                 <div>
                     Favorite jokes:
-                    {}
+                    {jokes.map(jokeObj => {
+                        return (
+                            <div key={jokeObj.id}>{jokeObj.joke}</div>
+                        );
+                    })}
                 </div>
                 <Colors onSelectColor={this.handleSelectColor}/>
-                <AddSkill onAddSkillClick={this.addSkill}/>
+                <AddSkill
+                    skills={this.state.skills}
+                    onAddSkillClick={this.addSkill}
+                />
             </div>
             
         );
