@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import UserComand from './UserComand'
+import UserCard from './UserCard'
 
 class GithubUsers extends Component {
 	state = {
@@ -53,7 +53,7 @@ class GithubUsers extends Component {
 		}
 		return (
 			<div style={{textAlign: 'center'}}>
-				<UserComand users={this.state.nextUsers} />
+				<UserCard users={this.state.nextUsers} />
 				<button onClick={this.addNewUsers} style={{width: '50%'}}>{loading || 'Show More'}</button>
 			</div>
 		);
