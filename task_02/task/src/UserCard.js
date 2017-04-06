@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './style.css';
 
-class UserComand extends Component {
+class UserCard extends Component {
 	state = {
 		userName: ''
 	}
@@ -34,4 +34,4 @@ class UserComand extends Component {
 	}
 }
 
-export default UserComand;
+export default UserCard;
