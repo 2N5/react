@@ -1,21 +1,51 @@
 import React, { Component } from 'react';
+import './user.css';
 
 class UserCard extends Component {
 
-  render() {
-    let Users = this.props.users;
-    const list = Users.map(function(user){
-      return (
-          <figure key={user.id}>
-            <img src={user.avatar_url} alt={user.name} />
-            <br />
-            {/*<figcaption>{user.name}</figcaption>*/}
-            <a href={user.html_url}>{user.login}</a>
-          </figure>
-      );
+  constructor (props) {
+    super(props);
+
+    this.state = {
+      showName: false,
+      name: ''
+    }
+
+  }
+
+  showName = (e) => {
+    let userId = e.target.id;
+    console.log(userId);
+    fetch(`https://api.github.com/user/${userId}`).then(data => data.json()).then(json => {
+      this.setState({name: json.name});
+      this.setState({showName: true});
     });
+  };
+
+
+
+  render() {
+
+    let nameBox = <figcaption />;
+    if (this.state.name !== '') {
+      nameBox = <figcaption>{this.state.name}</figcaption>
+    }
+
     return (
-        <div>{list}</div>
+        <table className="userTable" id={this.props.user.id}>
+          <tbody>
+            <tr>
+              <td className="avatar">
+                <img id={this.props.user.id} src={this.props.user.avatar_url} alt={this.props.user.name}
+                     onClick={this.showName}/>
+              </td>
+              <td className="desc">
+                {nameBox}
+                <a href={this.props.user.html_url}>{this.props.user.login}</a> - <span>{this.props.user.id}</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
     );
   }
 }
