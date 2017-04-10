@@ -7,19 +7,21 @@ class GithubUsers extends Component {
   state = {
     users: [],
     lastUserId: 0,
-    isLoading: false
+    isLoading: true
   };
 
   componentDidMount() {
+    this.setState({isLoading: true});
     fetch('https://api.github.com/users')
         .then(data => data.json())
         .then(json => {
           this.setState({users: json});
+          this.setState({isLoading: false});
         });
 
   }
 
-  loadMore = (e) => {
+  loadMore = () => {
     if (this.state.users.length > 0){
       this.setState({isLoading: true});
       let lastUserId = this.state.users[this.state.users.length - 1].id;
