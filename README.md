@@ -1,3 +1,10 @@
+Мыслим в стиле React
+https://habrahabr.ru/post/319134/
+
+[Домашнее задание 3](/task_03)
+
+---
+
 History_API
 https://developer.mozilla.org/ru/docs/Web/API/History_API
 
