@@ -5,10 +5,6 @@ class AddSkill extends Component {
         enteredSkill: ''
     };
 
-    componentWillReceiveProps(nextProps) {
-        console.log(nextProps.skills)
-    }
-
     handleSkillInputChange = (e) => {
         this.setState({
             enteredSkill: e.target.value

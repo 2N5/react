@@ -7,13 +7,9 @@ class User extends Component {
     state = {
         skills: this.props.skills,
         favoriteColor: '',
-        jokes: []
+        jokes: [],
+        firstUserOutOfScreen: false
     };
-
-    componentWillUpdate() {
-        console.log('update');
-        
-    }
 
     componentDidMount() {
         fetch('http://api.icndb.com/jokes/random/3')
@@ -34,14 +30,17 @@ class User extends Component {
     };
 
     render() {
-        console.log('render');
-        
+
         const {
             favoriteColor,
             jokes
         } = this.state;
+
         return (
-            <div style={{background: favoriteColor}}>
+            <div
+                style={{background: favoriteColor}}
+                ref={(div) => this.user = div}
+            >
                 <h3>{this.props.name}</h3>
                 <h5>{this.props.title}</h5>
                 <ul>
