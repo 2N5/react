@@ -6,7 +6,8 @@ class GithubUsers extends Component {
 
   state = {
     users: [],
-    lastUserId: 0
+    lastUserId: 0,
+    isLoading: false
   };
 
   componentDidMount() {
@@ -20,9 +21,11 @@ class GithubUsers extends Component {
 
   loadMore = (e) => {
     if (this.state.users.length > 0){
+      this.setState({isLoading: true});
       let lastUserId = this.state.users[this.state.users.length - 1].id;
       fetch(`https://api.github.com/users?since=${lastUserId}`).then(data => data.json()).then(json => {
         this.setState({users: this.state.users.concat(json)});
+        this.setState({isLoading: false});
       });
     }
   };
@@ -39,7 +42,12 @@ class GithubUsers extends Component {
       );
     });
 
-    let showMore = <button data-last-id={this.state.lastUserId} className="showMore" type="button" onClick={this.loadMore}>Load more</button>
+
+    let buttonText = 'Load more';
+    if(this.state.isLoading){
+      buttonText = 'Loading...';
+    }
+    let showMore = <button data-last-id={this.state.lastUserId} className="showMore" type="button" onClick={this.loadMore}>{buttonText}</button>
 
     return (
         <div>
