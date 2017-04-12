@@ -1,9 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import UserComand from './UserComand';
-import './index.css';
+import GithubUsers from './GithubUsers';
 
 ReactDOM.render(
-  <UserComand />,
+  <GithubUsers />,
   document.getElementById('root')
 );
