@@ -1,3 +1,16 @@
+Материалы для дальнейшего изучения:
+
+Курс по Angular 2 с промокодом для бесплатного прохождения
+https://www.udemy.com/angular-2-training/?couponCode=ACC2017
+
+Туториал по Vue.js
+https://www.sitepoint.com/fetching-data-third-party-api-vue-axios/
+
+Видео по работе с React
+https://www.codeschool.com/search?utf8=%E2%9C%93&query=react
+
+---
+
 Мыслим в стиле React
 https://habrahabr.ru/post/319134/
 
